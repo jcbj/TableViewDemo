@@ -44,8 +44,8 @@
 		497191591C315F4400DCF97E = {
 			isa = PBXGroup;
 			children = (
-				497191641C315F4400DCF97E /* UITableViewDemo */,
 				497191631C315F4400DCF97E /* Products */,
+				497191641C315F4400DCF97E /* UITableViewDemo */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,17 +60,25 @@
 		497191641C315F4400DCF97E /* UITableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4971917F1C318CAA00DCF97E /* Contact Data */,
 				497191651C315F4400DCF97E /* AppDelegate.swift */,
+				4971916C1C315F4400DCF97E /* Assets.xcassets */,
+				497191711C315F4400DCF97E /* Info.plist */,
+				4971916E1C315F4400DCF97E /* LaunchScreen.storyboard */,
 				497191691C315F4400DCF97E /* Main.storyboard */,
 				4971917B1C31638D00DCF97E /* MainTableViewController.swift */,
-				4971916C1C315F4400DCF97E /* Assets.xcassets */,
-				4971916E1C315F4400DCF97E /* LaunchScreen.storyboard */,
-				497191711C315F4400DCF97E /* Info.plist */,
+			);
+			path = UITableViewDemo;
+			sourceTree = "<group>";
+		};
+		4971917F1C318CAA00DCF97E /* Contact Data */ = {
+			isa = PBXGroup;
+			children = (
 				497191771C31608600DCF97E /* Contact.swift */,
 				497191791C31623100DCF97E /* ContactGroup.swift */,
 				4971917D1C3164E100DCF97E /* ContactStore.swift */,
 			);
-			path = UITableViewDemo;
+			path = "Contact Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +169,7 @@
 				4971916A1C315F4400DCF97E /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		4971916E1C315F4400DCF97E /* LaunchScreen.storyboard */ = {
@@ -169,6 +178,7 @@
 				4971916F1C315F4400DCF97E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -298,6 +308,7 @@
 				497191761C315F4400DCF97E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
