@@ -8,9 +8,13 @@
 
 import UIKit
 
-class MainTableViewController: UITableViewController {
+class MainTableViewController: UITableViewController,UIAlertViewDelegate {
+    
+    static let ContactCell: String = "ContactCell"
+    static let FirstCell: String = "FirstCell"
     
     var contactStore: ContactStore = ContactStore.Instance
+    var currentSelectIndexPath: NSIndexPath!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +29,6 @@ class MainTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        //cell重用
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "ContactCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,11 +61,42 @@ class MainTableViewController: UITableViewController {
         
         let contact = contactStore.contactGroups[indexPath.section].contacts[indexPath.row]
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath)
-        cell.textLabel?.text = contact.name
-        cell.detailTextLabel?.text = contact.phoneNumber
+        var cell: UITableViewCell?
         
-        return cell
+        if 0 == indexPath.row {
+            cell = self.tableView.dequeueReusableCellWithIdentifier(MainTableViewController.FirstCell)
+        } else {
+            cell = self.tableView.dequeueReusableCellWithIdentifier(MainTableViewController.ContactCell)
+        }
+        
+        if cell == nil {
+            if 0 == indexPath.row {
+                cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: MainTableViewController.FirstCell)
+                
+                let tempSwitch = UISwitch()
+                tempSwitch.addTarget(self, action: Selector("switchValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+                
+                cell?.accessoryView = tempSwitch
+                
+            } else {
+                
+                cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: MainTableViewController.ContactCell)
+                cell?.accessoryType = UITableViewCellAccessoryType.DetailButton
+            }
+        }
+        
+        if 0 == indexPath.row {
+            cell?.accessoryView?.tag = indexPath.section
+        }
+        
+        cell!.textLabel?.text = contact.name
+        cell!.detailTextLabel?.text = contact.phoneNumber
+        
+        return cell!
+    }
+    
+    func switchValueChanged(btnSwitch: UISwitch) {
+        print("section:\(btnSwitch.tag),switch:\(btnSwitch.on)")
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -86,50 +119,56 @@ class MainTableViewController: UITableViewController {
             return group.name
         })
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    //设置分组标题高度
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if 0 == section {
+            return 50
+        } else {
+            return 44
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    //设置每行高度
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 44
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    //设置分组尾部说明高度
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 44
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    //deprecated
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.currentSelectIndexPath = indexPath
+        
+        let contact = contactStore.contactGroups[self.currentSelectIndexPath.section].contacts[self.currentSelectIndexPath.row]
+        
+        let alertView = UIAlertView(title: "Edit contact", message: contact.name, delegate: self,
+            cancelButtonTitle: "Cancel", otherButtonTitles: "Ok")
+        
+        alertView.alertViewStyle = UIAlertViewStyle.PlainTextInput
+        let textField = alertView.textFieldAtIndex(0)
+        textField?.text = contact.phoneNumber
+        
+        alertView.show()
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        
+        if 1 == buttonIndex {
+            let textField = alertView.textFieldAtIndex(0)
+            let contact = contactStore.contactGroups[self.currentSelectIndexPath.section].contacts[self.currentSelectIndexPath.row]
+            contact.phoneNumber = textField?.text
+            //全部重新加载数据，对性能影响很大
+//            self.tableView.reloadData()
+            //只更新局部单条记录
+            self.tableView.reloadRowsAtIndexPaths([self.currentSelectIndexPath], withRowAnimation: UITableViewRowAnimation.Left)
+        }
     }
-    */
-
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
 }
