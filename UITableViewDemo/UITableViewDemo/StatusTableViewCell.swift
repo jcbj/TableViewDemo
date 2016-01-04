@@ -22,11 +22,12 @@ class StatusTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        self.contentText.preferredMaxLayoutWidth = self.contentText.bounds.size.width
-    }
+//    //iOS7之前版本需要设置Label的preferredMaxLayoutWidth才能自动换行
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        
+//        self.contentText.preferredMaxLayoutWidth = self.contentText.bounds.size.width
+//    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -15,7 +15,8 @@ class StatusTableViewController: UITableViewController {
     var status: [Status] = [Status]()
     var statusCellsDic: [Int : StatusTableViewCell] = [Int : StatusTableViewCell]()
     
-    var heightCell: StatusTableViewCell!
+//    //iOS 7之前版本计算方法
+//    var heightCell: StatusTableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,11 @@ class StatusTableViewController: UITableViewController {
         
         self.tableView.registerNib(nib, forCellReuseIdentifier: StatusTableViewController.StatusCell)
         
-        self.heightCell = self.tableView.dequeueReusableCellWithIdentifier(StatusTableViewController.StatusCell) as! StatusTableViewCell
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 150
+        
+//        //iOS 7之前版本计算方法
+//        self.heightCell = self.tableView.dequeueReusableCellWithIdentifier(StatusTableViewController.StatusCell) as! StatusTableViewCell
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -77,18 +82,21 @@ class StatusTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if  indexPath.row < self.status.count {
-            let heightCell = self.heightCell
-            let cellData = self.status[indexPath.row]
-            
-            heightCell.setData(cellData)
-            heightCell.layoutSubviews()
-            //此处＋1，是分割线的高度，不加，则label还是无法显示完整。
-            return heightCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height + 1
-        }
-        else {
-            return 100
-        }
+        return UITableViewAutomaticDimension
+        
+        //iOS 7之前版本计算方法
+//        if  indexPath.row < self.status.count {
+//            let heightCell = self.heightCell
+//            let cellData = self.status[indexPath.row]
+//            
+//            heightCell.setData(cellData)
+//            heightCell.layoutSubviews()
+//            //此处＋1，是分割线的高度，不加，则label还是无法显示完整。
+//            return heightCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height + 1
+//        }
+//        else {
+//            return 100
+//        }
     }
     
     /*

@@ -82,11 +82,10 @@
 		497191641C315F4400DCF97E /* UITableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				4971917F1C318CAA00DCF97E /* Contact Data */,
-				49060D171C341C11006B8895 /* Supporting Files */,
 				491DAED11C357E5000FC3AB2 /* 1.png */,
 				497191651C315F4400DCF97E /* AppDelegate.swift */,
 				4971916C1C315F4400DCF97E /* Assets.xcassets */,
+				4971917F1C318CAA00DCF97E /* Contact Data */,
 				497191711C315F4400DCF97E /* Info.plist */,
 				4971916E1C315F4400DCF97E /* LaunchScreen.storyboard */,
 				497191691C315F4400DCF97E /* Main.storyboard */,
@@ -94,6 +93,7 @@
 				49F925761C3425CD0070B700 /* StatusTableViewCell.swift */,
 				49F925771C3425CD0070B700 /* StatusTableViewCell.xib */,
 				49F925721C341DD20070B700 /* StatusTableViewController.swift */,
+				49060D171C341C11006B8895 /* Supporting Files */,
 				491DAED31C357E6E00FC3AB2 /* type.png */,
 			);
 			path = UITableViewDemo;
