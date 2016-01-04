@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491DAED01C356BC100FC3AB2 /* StatusInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 491DAECF1C356BC100FC3AB2 /* StatusInfo.plist */; };
+		491DAED21C357E5000FC3AB2 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 491DAED11C357E5000FC3AB2 /* 1.png */; };
+		491DAED41C357E6E00FC3AB2 /* type.png in Resources */ = {isa = PBXBuildFile; fileRef = 491DAED31C357E6E00FC3AB2 /* type.png */; };
 		497191661C315F4400DCF97E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497191651C315F4400DCF97E /* AppDelegate.swift */; };
 		4971916B1C315F4400DCF97E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497191691C315F4400DCF97E /* Main.storyboard */; };
 		4971916D1C315F4400DCF97E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4971916C1C315F4400DCF97E /* Assets.xcassets */; };
@@ -15,9 +18,16 @@
 		4971917A1C31623100DCF97E /* ContactGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497191791C31623100DCF97E /* ContactGroup.swift */; };
 		4971917C1C31638D00DCF97E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971917B1C31638D00DCF97E /* MainTableViewController.swift */; };
 		4971917E1C3164E100DCF97E /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971917D1C3164E100DCF97E /* ContactStore.swift */; };
+		49F925731C341DD20070B700 /* StatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F925721C341DD20070B700 /* StatusTableViewController.swift */; };
+		49F925751C341E460070B700 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F925741C341E460070B700 /* Status.swift */; };
+		49F925781C3425CD0070B700 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F925761C3425CD0070B700 /* StatusTableViewCell.swift */; };
+		49F925791C3425CD0070B700 /* StatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49F925771C3425CD0070B700 /* StatusTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		491DAECF1C356BC100FC3AB2 /* StatusInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StatusInfo.plist; sourceTree = "<group>"; };
+		491DAED11C357E5000FC3AB2 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = Assets.xcassets/1.imageset/1.png; sourceTree = "<group>"; };
+		491DAED31C357E6E00FC3AB2 /* type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = type.png; path = Assets.xcassets/type.imageset/type.png; sourceTree = "<group>"; };
 		497191621C315F4400DCF97E /* UITableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		497191651C315F4400DCF97E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4971916A1C315F4400DCF97E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +38,10 @@
 		497191791C31623100DCF97E /* ContactGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactGroup.swift; sourceTree = "<group>"; };
 		4971917B1C31638D00DCF97E /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		4971917D1C3164E100DCF97E /* ContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactStore.swift; sourceTree = "<group>"; };
+		49F925721C341DD20070B700 /* StatusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewController.swift; sourceTree = "<group>"; };
+		49F925741C341E460070B700 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		49F925761C3425CD0070B700 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		49F925771C3425CD0070B700 /* StatusTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49060D171C341C11006B8895 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				491DAECF1C356BC100FC3AB2 /* StatusInfo.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		497191591C315F4400DCF97E = {
 			isa = PBXGroup;
 			children = (
@@ -61,12 +83,18 @@
 			isa = PBXGroup;
 			children = (
 				4971917F1C318CAA00DCF97E /* Contact Data */,
+				49060D171C341C11006B8895 /* Supporting Files */,
+				491DAED11C357E5000FC3AB2 /* 1.png */,
 				497191651C315F4400DCF97E /* AppDelegate.swift */,
 				4971916C1C315F4400DCF97E /* Assets.xcassets */,
 				497191711C315F4400DCF97E /* Info.plist */,
 				4971916E1C315F4400DCF97E /* LaunchScreen.storyboard */,
 				497191691C315F4400DCF97E /* Main.storyboard */,
 				4971917B1C31638D00DCF97E /* MainTableViewController.swift */,
+				49F925761C3425CD0070B700 /* StatusTableViewCell.swift */,
+				49F925771C3425CD0070B700 /* StatusTableViewCell.xib */,
+				49F925721C341DD20070B700 /* StatusTableViewController.swift */,
+				491DAED31C357E6E00FC3AB2 /* type.png */,
 			);
 			path = UITableViewDemo;
 			sourceTree = "<group>";
@@ -77,6 +105,7 @@
 				497191771C31608600DCF97E /* Contact.swift */,
 				497191791C31623100DCF97E /* ContactGroup.swift */,
 				4971917D1C3164E100DCF97E /* ContactStore.swift */,
+				49F925741C341E460070B700 /* Status.swift */,
 			);
 			path = "Contact Data";
 			sourceTree = "<group>";
@@ -140,8 +169,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				497191701C315F4400DCF97E /* LaunchScreen.storyboard in Resources */,
+				49F925791C3425CD0070B700 /* StatusTableViewCell.xib in Resources */,
+				491DAED01C356BC100FC3AB2 /* StatusInfo.plist in Resources */,
+				491DAED21C357E5000FC3AB2 /* 1.png in Resources */,
 				4971916D1C315F4400DCF97E /* Assets.xcassets in Resources */,
 				4971916B1C315F4400DCF97E /* Main.storyboard in Resources */,
+				491DAED41C357E6E00FC3AB2 /* type.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +187,10 @@
 			files = (
 				4971917C1C31638D00DCF97E /* MainTableViewController.swift in Sources */,
 				497191781C31608600DCF97E /* Contact.swift in Sources */,
+				49F925751C341E460070B700 /* Status.swift in Sources */,
+				49F925781C3425CD0070B700 /* StatusTableViewCell.swift in Sources */,
 				4971917A1C31623100DCF97E /* ContactGroup.swift in Sources */,
+				49F925731C341DD20070B700 /* StatusTableViewController.swift in Sources */,
 				497191661C315F4400DCF97E /* AppDelegate.swift in Sources */,
 				4971917E1C3164E100DCF97E /* ContactStore.swift in Sources */,
 			);

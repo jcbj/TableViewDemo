@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Id</key>
+		<string>0</string>
+		<key>createdAt</key>
+		<string>8:23</string>
+		<key>mbtype</key>
+		<string>type.png</string>
+		<key>profileImageUrl</key>
+		<string>1.png</string>
+		<key>source</key>
+		<string>iPhone 5s</string>
+		<key>text</key>
+		<string>接下来就定义一个KCStatusTableViewCell实现UITableViewCell</string>
+		<key>userName</key>
+		<string>小冰0</string>
+	</dict>
+	<dict>
+		<key>Id</key>
+		<string>1</string>
+		<key>createdAt</key>
+		<string>2015-12-28 08:24</string>
+		<key>mbtype</key>
+		<string>type.png</string>
+		<key>profileImageUrl</key>
+		<string>1.png</string>
+		<key>source</key>
+		<string>iPhone 5s</string>
+		<key>text</key>
+		<string>接下来就定义一个KCStatusTableViewCell实现UITableViewCell，一般实现自定义UITableViewCell需要分为两步：第一初始化控件；</string>
+		<key>userName</key>
+		<string>小冰1</string>
+	</dict>
+	<dict>
+		<key>Id</key>
+		<string>2</string>
+		<key>createdAt</key>
+		<string>8:25</string>
+		<key>mbtype</key>
+		<string>type.png</string>
+		<key>profileImageUrl</key>
+		<string>1.png</string>
+		<key>source</key>
+		<string>iPhone 5s</string>
+		<key>text</key>
+		<string>接下来就定义一个KCStatusTableViewCell实现UITableViewCell，一般实现自定义UITableViewCell需要分为两步：第一初始化控件；第二设置数据，重新设置控件frame。</string>
+		<key>userName</key>
+		<string>小冰2</string>
+	</dict>
+	<dict>
+		<key>Id</key>
+		<string>3</string>
+		<key>createdAt</key>
+		<string>8:26</string>
+		<key>mbtype</key>
+		<string>type.png</string>
+		<key>profileImageUrl</key>
+		<string>1.png</string>
+		<key>source</key>
+		<string>iPhone 6s</string>
+		<key>text</key>
+		<string>接下来就定义一个KCStatusTableViewCell实现UITableViewCell，一般实现自定义UITableViewCell需要分为两步：第一初始化控件；</string>
+		<key>userName</key>
+		<string>小冰名字很长</string>
+	</dict>
+	<dict>
+		<key>Id</key>
+		<string>4</string>
+		<key>createdAt</key>
+		<string>8:27</string>
+		<key>mbtype</key>
+		<string>type.png</string>
+		<key>profileImageUrl</key>
+		<string>1.png</string>
+		<key>source</key>
+		<string>iPhone 5s</string>
+		<key>text</key>
+		<string>接下来就定义一个KCStatusTableViewCell实现UITableViewCell，一般实现自定义UITableViewCell需要分为两步：第一初始化控件；第二设置数据，重新设置控件frame。原因就是自定义Cell一般无法固定高度，很多时候高度需要随着内容改变。此外由于在单元格内部是无法控制单元格高度的，因此一般会定义一个高度属性用于在UITableView的代理事件中设置每个单元格高度。</string>
+		<key>userName</key>
+		<string>小冰4</string>
+	</dict>
+	<dict>
+		<key>Id</key>
+		<string>5</string>
+		<key>createdAt</key>
+		<string>8:28</string>
+		<key>mbtype</key>
+		<string>type.png</string>
+		<key>profileImageUrl</key>
+		<string>1.png</string>
+		<key>source</key>
+		<string>iPad</string>
+		<key>text</key>
+		<string>接下来就定义一个KCStatusTableViewCell实现UITableViewCell，一般实现自定义UITableViewCell需要分为两步：第一初始化控件；</string>
+		<key>userName</key>
+		<string>小冰测试</string>
+	</dict>
+	<dict>
+		<key>Id</key>
+		<string>6</string>
+		<key>createdAt</key>
+		<string>8:29</string>
+		<key>mbtype</key>
+		<string>type.png</string>
+		<key>profileImageUrl</key>
+		<string>1.png</string>
+		<key>source</key>
+		<string>iPhone 5s</string>
+		<key>text</key>
+		<string>接下来就定义一个KCStatusTableViewCell实现UITableViewCell，一般实现自定义UITableViewCell需要分为两步：第一初始化控件；第二设置数据，重新设置控件frame。原因就是自定义Cell一般无法固定高度，很多时候高度需要随着内容改变。此外由于在单元格内部是无法控制单元格高度的，因此一般会定义一个高度属性用于在UITableView的代理事件中设置每个单元格高度。第二设置数据，重新设置控件frame。原因就是自定义Cell一般无法固定高度，很多时候高度需要随着内容改变。此外由于在单元格内部是无法控制单元格高度的，因此一般会定义一个高度属性用于在UITableView的代理事件中设置每个单元格高度。</string>
+		<key>userName</key>
+		<string>小冰测试长度</string>
+	</dict>
+	<dict>
+		<key>Id</key>
+		<string>7</string>
+		<key>createdAt</key>
+		<string>8:30</string>
+		<key>mbtype</key>
+		<string>type.png</string>
+		<key>profileImageUrl</key>
+		<string>1.png</string>
+		<key>source</key>
+		<string>iPhone 5s</string>
+		<key>text</key>
+		<string>接下来就定义一个KCStatusTableViewCell实现UITableViewCell，一般实现自定义UITableViewCell需要分为两步：第一初始化控件；</string>
+		<key>userName</key>
+		<string>小冰</string>
+	</dict>
+</array>
+</plist>

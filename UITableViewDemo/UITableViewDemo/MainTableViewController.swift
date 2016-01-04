@@ -23,6 +23,9 @@ class MainTableViewController: UITableViewController,UIAlertViewDelegate {
         
         self.tableView.dataSource = self
         
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: MainTableViewController.ContactCell)
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: MainTableViewController.FirstCell)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
