@@ -52,4 +52,19 @@ class ContactStore {
         self.contactGroups.append(ContactGroup(name: "Z", detail: "With names beginnig with Z", contacts: tempContacts))
     }
     
+    func insert(indexPath: NSIndexPath) {
+        let count = self.contactGroups[indexPath.section].contacts.count
+        let firstname = self.contactGroups[indexPath.section].contacts[0].firstName
+        
+        self.contactGroups[indexPath.section].contacts.append(Contact(firstName: firstname, lastName: "Joy" + String(count), phoneNumber: "136323200" + (count > 9 ? String(count) : "0" + String(count))))
+    }
+    
+    func moveRow(sourceIndex: NSIndexPath, destIndex: NSIndexPath) {
+        let contact = self.contactGroups[sourceIndex.section].contacts[sourceIndex.row]
+        
+        self.contactGroups[destIndex.section].contacts.insert(contact, atIndex: destIndex.row)
+        
+        self.contactGroups[sourceIndex.section].contacts.removeAtIndex(sourceIndex.row)
+    }
+    
 }

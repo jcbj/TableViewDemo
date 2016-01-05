@@ -22,6 +22,16 @@ class StatusTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.initData()
+        //顶部留白关闭
+//        self.edgesForExtendedLayout = UIRectEdge.None
+//        self.extendedLayoutIncludesOpaqueBars = false
+//        self.modalPresentationCapturesStatusBarAppearance = false
+//        self.automaticallyAdjustsScrollViewInsets = true
+        
+//        self.tabBarController?.tabBar.translucent = false
+//        self.navigationController?.navigationBar.translucent = true
+        self.navigationController?.navigationBar.hidden = true
+//        self.edgesForExtendedLayout = UIRectEdge.None
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -63,6 +73,7 @@ class StatusTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        
         return 1
     }
 

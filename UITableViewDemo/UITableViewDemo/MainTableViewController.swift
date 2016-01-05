@@ -15,6 +15,7 @@ class MainTableViewController: UITableViewController,UIAlertViewDelegate {
     
     var contactStore: ContactStore = ContactStore.Instance
     var currentSelectIndexPath: NSIndexPath!
+    var isInsert: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +31,12 @@ class MainTableViewController: UITableViewController,UIAlertViewDelegate {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("AddAction:"))
         
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: Selector("AddAction:"))
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -173,5 +176,46 @@ class MainTableViewController: UITableViewController,UIAlertViewDelegate {
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
+    }
+    
+    // MARK: - Operation
+    
+    func AddAction(barButtonItem:UIBarButtonItem ) {
+        
+        self.isInsert = !self.tableView.editing
+        self.tableView.editing = !self.tableView.editing
+        self.navigationItem.rightBarButtonItem!.title = (self.tableView.editing ? "Done" : "Add" )
+    }
+    
+    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        if self.isInsert {
+            return UITableViewCellEditingStyle.Insert
+        }
+        
+        return UITableViewCellEditingStyle.Delete
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            contactStore.contactGroups[indexPath.section].contacts.removeAtIndex(indexPath.row)
+            
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Bottom)
+            
+            if contactStore.contactGroups[indexPath.section].contacts.count == 0 {
+                contactStore.contactGroups.removeAtIndex(indexPath.section)
+                self.tableView.reloadData()
+            }
+        } else if editingStyle == UITableViewCellEditingStyle.Insert {
+            contactStore.insert(indexPath)
+            self.tableView.reloadData()
+        }
+    }
+    
+    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        
+        contactStore.moveRow(sourceIndexPath, destIndex: destinationIndexPath)
+        
+        self.tableView.reloadData()
     }
 }

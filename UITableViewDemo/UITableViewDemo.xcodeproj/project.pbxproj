@@ -10,6 +10,9 @@
 		491DAED01C356BC100FC3AB2 /* StatusInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 491DAECF1C356BC100FC3AB2 /* StatusInfo.plist */; };
 		491DAED21C357E5000FC3AB2 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 491DAED11C357E5000FC3AB2 /* 1.png */; };
 		491DAED41C357E6E00FC3AB2 /* type.png in Resources */ = {isa = PBXBuildFile; fileRef = 491DAED31C357E6E00FC3AB2 /* type.png */; };
+		493C4C381C3C174800516BC4 /* Time.png in Resources */ = {isa = PBXBuildFile; fileRef = 493C4C371C3C174800516BC4 /* Time.png */; };
+		493C4C3A1C3C18A600516BC4 /* contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 493C4C391C3C18A600516BC4 /* contact.png */; };
+		493C4C3C1C3C18FE00516BC4 /* Hypno.png in Resources */ = {isa = PBXBuildFile; fileRef = 493C4C3B1C3C18FE00516BC4 /* Hypno.png */; };
 		497191661C315F4400DCF97E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497191651C315F4400DCF97E /* AppDelegate.swift */; };
 		4971916B1C315F4400DCF97E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497191691C315F4400DCF97E /* Main.storyboard */; };
 		4971916D1C315F4400DCF97E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4971916C1C315F4400DCF97E /* Assets.xcassets */; };
@@ -28,6 +31,9 @@
 		491DAECF1C356BC100FC3AB2 /* StatusInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StatusInfo.plist; sourceTree = "<group>"; };
 		491DAED11C357E5000FC3AB2 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = Assets.xcassets/1.imageset/1.png; sourceTree = "<group>"; };
 		491DAED31C357E6E00FC3AB2 /* type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = type.png; path = Assets.xcassets/type.imageset/type.png; sourceTree = "<group>"; };
+		493C4C371C3C174800516BC4 /* Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Time.png; path = "Contact Data/Time.png"; sourceTree = "<group>"; };
+		493C4C391C3C18A600516BC4 /* contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact.png; sourceTree = "<group>"; };
+		493C4C3B1C3C18FE00516BC4 /* Hypno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hypno.png; sourceTree = "<group>"; };
 		497191621C315F4400DCF97E /* UITableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		497191651C315F4400DCF97E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4971916A1C315F4400DCF97E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,11 +93,14 @@
 				4971916C1C315F4400DCF97E /* Assets.xcassets */,
 				4971917F1C318CAA00DCF97E /* Contact Data */,
 				497191711C315F4400DCF97E /* Info.plist */,
+				493C4C371C3C174800516BC4 /* Time.png */,
 				4971916E1C315F4400DCF97E /* LaunchScreen.storyboard */,
 				497191691C315F4400DCF97E /* Main.storyboard */,
+				493C4C3B1C3C18FE00516BC4 /* Hypno.png */,
 				4971917B1C31638D00DCF97E /* MainTableViewController.swift */,
 				49F925761C3425CD0070B700 /* StatusTableViewCell.swift */,
 				49F925771C3425CD0070B700 /* StatusTableViewCell.xib */,
+				493C4C391C3C18A600516BC4 /* contact.png */,
 				49F925721C341DD20070B700 /* StatusTableViewController.swift */,
 				49060D171C341C11006B8895 /* Supporting Files */,
 				491DAED31C357E6E00FC3AB2 /* type.png */,
@@ -168,11 +177,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493C4C381C3C174800516BC4 /* Time.png in Resources */,
 				497191701C315F4400DCF97E /* LaunchScreen.storyboard in Resources */,
 				49F925791C3425CD0070B700 /* StatusTableViewCell.xib in Resources */,
 				491DAED01C356BC100FC3AB2 /* StatusInfo.plist in Resources */,
+				493C4C3C1C3C18FE00516BC4 /* Hypno.png in Resources */,
 				491DAED21C357E5000FC3AB2 /* 1.png in Resources */,
 				4971916D1C315F4400DCF97E /* Assets.xcassets in Resources */,
+				493C4C3A1C3C18A600516BC4 /* contact.png in Resources */,
 				4971916B1C315F4400DCF97E /* Main.storyboard in Resources */,
 				491DAED41C357E6E00FC3AB2 /* type.png in Resources */,
 			);
